@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    char charType;
+    int integerType;
+    float floatType;
+    double doubleType;
+    printf("---------[김승진][2017038092]=---------------");
+    printf("Size of char : %ld byte\n", sizeof(charType));  //변수 charType의 바이트가 1이다.
+    printf("Size of int : %ld byte\n", sizeof(integerType)); //변수 integerType의 바이트가 4이다.
+    printf("Size of float : %ld byte\n", sizeof(floatType)); //변수 floatType의 바이트가 4이다.
+    printf("Size of double : %ld byte\n", sizeof(doubleType)); //변수 double의 바이트가 8이다.
+    
+    printf("--------------------------------------\n");
+
+    printf("Size of char : %ld byte\n", sizeof(char));     //char는 1파이트로 되어있다는 뜻
+    printf("Size of int : %ld byte\n", sizeof(int));        //int는 4파이트로 되어있다는 뜻
+    printf("Size of float : %ld byte\n", sizeof(float));    //float는 4파이트로 되어있다는 뜻
+    printf("Size of double : %ld byte\n", sizeof(double));  //double은 8파이트로 되어있다는 뜻
+    
+    printf("--------------------------------------\n");
+
+    printf("Size of char : %ld byte\n", sizeof(char*));     //char포인트의 사이즈가 4바이트 
+    printf("Size of int : %ld byte\n", sizeof(int*));       //int포인트의 사이트가 4파이트 
+    printf("Size of float : %ld byte\n", sizeof(float*));   //float포인트의 사이즈가 4바이트
+    printf("Size of double : %ld byte\n", sizeof(double*)); //double포인트의 사이즈가 4바이트
+                                                            //=포인터 변수는 4바이트다 
+    
+}
+
