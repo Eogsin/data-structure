@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    int *ptr;
+    int **dptr;
+
+    i=1234;
+    printf("\n----[kim seoung jun][2017038092]----\n");
+    printf("[checking values before ptr = &i] \n");
+    printf("value of i == %d\n", i);                //i값을 출력
+    printf("address of == %p\n", &i);               //i의 주소값 출력
+    printf("value of ptr == %p\n", ptr);            //ptr의 값을 출력
+    printf("address of ptr == %p\n", &ptr);         //ptr의 주소 출력
+
+
+    ptr = &i; //ptr가 i를 포인트 한다. 
+
+    printf("[checking values after ptr = &i] \n");    
+    printf("value of i == %d\n", i);                //i값출력
+    printf("address of == %p\n", &i);               //i의 주소값 출력
+    printf("value of ptr == %p\n", ptr);            //ptr의 값을 출력=>i를 포인트하여 i의 주소를 출력 하게 됨
+    printf("address of ptr == %p\n", &ptr);         //ptr의 주소 값을 출력
+    printf("value of *ptr == %d\n", *ptr);          //ptr이 포인트하는 i값을 출력
+
+    dptr = &ptr;   // dptr이 ptr을 포인트 한다.
+
+    printf("\n[checking values after dptr = &ptr] \n");
+    printf("value of i == %d\n", i);                 //i값을출력
+    printf("address of == %p\n", &i);               //i의 주소값 출력
+    printf("value of ptr == %p\n", ptr);            //ptr값 출력
+    printf("address of ptr == %p\n", &ptr);         //ptr의 주소값을 출력
+    printf("value of *ptr == %d\n", *ptr);          //ptr이 포인트 하는 값을 출력
+    printf("value of dptr == %p\n", dptr);          //dptr의 값을 출력 -> ptr를 포인트하기 떄문에 ptr의 주소 값이 나옴
+    printf("address of dptr == %p\n", &dptr);       //dptr의 주소값을 출력
+    printf("value of *dptr == %p\n", *dptr);        //dptr이 포인트하는 ptr의 값 즉 i의 주소값 출력
+    printf("value of **dptr == %d\n", **dptr);      //dptr이 포인트하는 ptr이 포인트하는 i의 값을 출력 
+    
+    *ptr = 7777;  //ptr이 포인트 하는 값(i)를 7777로 바꿈 
+
+    printf("\n[after *ptr = 7777]\n");          
+    printf("value of i == %d\n", i);                //i값출력
+    printf("value of *ptr == %d\n", *ptr);          //ptr이 포인트하는 값 출력
+    printf("value of **dptr == %d\n", **dptr);      //dptr 이 더블 포인트 하는 값출력
+    
+    **dptr = 8888; //dptr이 더블 포인트하는 값(i)을 8888로 바꿈 
+    
+    printf("\n[after **dptr = 8888]\n");            
+    printf("value of i == %d\n", i);                //i값 출력
+    printf("value of *ptr == %d\n", *ptr);          //ptr이 포인트하는 값 출력
+    printf("value of **dptr == %d\n", **dptr);      //dptr 이 더블 포인트 하는 값출력
+    
+    return 0;
+}
+
